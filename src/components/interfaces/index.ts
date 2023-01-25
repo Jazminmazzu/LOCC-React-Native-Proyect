@@ -5,4 +5,5 @@ export interface Crypto {
   price: number;
   percent: number;
   img: string;
+
 }

@@ -2,14 +2,14 @@ import React from 'react';
 import {Crypto} from '../interfaces/index';
 import {
   Container,
-  ContainerLogo,
+  LogoContainer,
   CryptoLogo,
-  ContainerText,
+  TextContainer,
   TextCoin,
   TextSymbol,
-  ContainerLeft,
-  ContainerRight,
-  ContainerChange,
+  LeftContainer,
+  RightContainer,
+  ChangeContainer,
   Arrow,
   TextPercent,
   TextPercentage,
@@ -17,30 +17,32 @@ import {
 } from '../list/styles';
 import GreenArrow from '../../assets/img/GreenArrow.png';
 import RedArrow from '../../assets/img/RedArrow.png';
-
-const List = ({item}: {item: Crypto}) => (
+interface Props {
+  item: Crypto;
+}
+const List = ({item}: Props) => (
   <>
     <Container>
-      <ContainerLeft>
-        <ContainerLogo>
+      <LeftContainer>
+        <LogoContainer>
           <CryptoLogo source={item.img} />
-        </ContainerLogo>
-        <ContainerText>
+        </LogoContainer>
+        <TextContainer>
           <TextCoin>{item.name}</TextCoin>
           <TextSymbol>{item.symbol}</TextSymbol>
-        </ContainerText>
-      </ContainerLeft>
-      <ContainerRight>
-        <ContainerChange>
+        </TextContainer>
+      </LeftContainer>
+      <RightContainer>
+        <ChangeContainer>
           <TextCoin>${item.price}</TextCoin>
           <TextPercent>
             <Arrow source={item.percent > 0 ? GreenArrow : RedArrow} />
             <TextPercentage positive={item.percent > 0}>
-              {item.percent}%{' '}
+              {item.percent}%
             </TextPercentage>
           </TextPercent>
-        </ContainerChange>
-      </ContainerRight>
+        </ChangeContainer>
+      </RightContainer>
     </Container>
     <Line />
   </>

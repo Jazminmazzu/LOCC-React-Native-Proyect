@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import theme from '../../config/utils/theme';
-import { Text as TextRN, Image as ImageRN, View as ViewRN } from 'react-native';
+import { Text, Image, View } from 'react-native';
 
-export const TopBar = styled(ViewRN)`
+export const TopBar = styled(View)`
   padding-vertical: 42px;
   padding-horizontal: 24px;
   background-color: ${theme.colors.blue};
@@ -12,7 +12,7 @@ export const TopBar = styled(ViewRN)`
   margin-bottom: 10px;
 `;
 
-export const Text = styled(TextRN)`
+export const CustomText = styled(Text)`
   font-family: Inter;
   font-weight: bold;
   font-size: 20px;
@@ -20,19 +20,19 @@ export const Text = styled(TextRN)`
   color: ${theme.colors.white};
 `;
 
-export const ProfilePhoto = styled(ImageRN)`
+export const ProfilePhoto = styled(Image)`
   width: 55px;
   height: 55px;
   border-radius: 100px;
 `;
 
-export const Container = styled(ViewRN)`
+export const Container = styled(View)`
   margin-top: 48px;
   display: flex;
   align-items: center;
 `;
 
-export const TextTouchable = styled(TextRN)`
+export const TextTouchable = styled(Text)`
   font-size: 16px;
   align-items: center;
   color: ${theme.colors.blue};

@@ -4,14 +4,14 @@ import {Crypto} from '../interfaces/index';
 import List from '../list/index';
 import {
   Container,
-  Text,
+  CustomText,
   TopBar,
   ProfilePhoto,
   TextTouchable,
 } from '../cryptoList/styles';
 import avatar from '../../assets/img/avatar.png';
 
-const CryptocurrenciesList = () => {
+function CryptocurrenciesList() {
   const cryptos: Crypto[] = [
     {
       id: '1',
@@ -39,19 +39,18 @@ const CryptocurrenciesList = () => {
     },
   ];
 
-  const renderItem = ({item}: {item: Crypto}) => <List item={item} />;
+  const renderItem = ({ item }: { item: Crypto; }) => <List item={item} />;
 
   return (
     <>
       <TopBar>
-        <Text>CryptoTracker Pro</Text>
+        <CustomText>CryptoTracker Pro</CustomText>
         <ProfilePhoto source={avatar} />
       </TopBar>
       <FlatList
         data={cryptos}
         renderItem={renderItem}
-        keyExtractor={({id}) => id}
-      />
+        keyExtractor={({ id }) => id} />
       <Container>
         <TouchableOpacity>
           <TextTouchable>+ Add a Cryptocurrency</TextTouchable>
@@ -59,6 +58,6 @@ const CryptocurrenciesList = () => {
       </Container>
     </>
   );
-};
+}
 
 export default CryptocurrenciesList;

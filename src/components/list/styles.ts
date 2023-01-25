@@ -1,59 +1,59 @@
 import styled from 'styled-components';
 import theme from '../../config/utils/theme';
-import { Text as TextRN, View as ViewRN, Image as ImageRN } from 'react-native';
+import { Text, View, Image } from 'react-native';
 
-export const Container = styled(ViewRN)`
+export const Container = styled(View)`
   flex: 1;
-  padding-horizontal: 10px;
+  padding-horizontal: 12px;
   flex-direction: row;
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
-export const ContainerLeft = styled(ViewRN)`
+export const LeftContainer = styled(View)`
   justify-content: flex-start;
   display: flex;
   flex-flow: wrap;
 `;
 
-export const ContainerLogo = styled(ViewRN)`
+export const LogoContainer = styled(View)`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding-right: 7.5%;
-  padding-left: 3%;
+  padding-left: 7.5%;
 `;
 
-export const ContainerText = styled(ViewRN)`
+export const TextContainer = styled(View)`
   display: flex;
   justify-content: center;
   text-align: left;
 `;
 
-export const TextCoin = styled(TextRN)`
+export const TextCoin = styled(Text)`
   font-family: Inter;
   font-weight: bold;
   font-size: 16px;
   color: ${theme.colors.black};
 `;
 
-export const TextSymbol = styled(TextRN)`
+export const TextSymbol = styled(Text)`
   font-family: Inter;
   font-weight: bold;
   font-size: 16px;
   color: ${theme.colors.grey};
 `;
 
-export const ContainerRight = styled(ViewRN)`
+export const RightContainer = styled(View)`
   justify-content: flex-end;
   display: flex;
   flex-flow: wrap;
 `;
 
-export const ContainerChange = styled(ViewRN)`
-  padding-horizontal: 10px;
+export const ChangeContainer = styled(View)`
+  padding-horizontal: 25px;
   justify-content: flex-end;
   display: flex;
   align-items: space-between;
@@ -61,30 +61,30 @@ export const ContainerChange = styled(ViewRN)`
   padding-horizontal: 20px;
 `;
 
-export const TextPercent = styled(TextRN)`
+export const TextPercent = styled(Text)`
   flex-direction: row;
   justify-content: flex-end;
   font-size: 14px;
 `;
 
-export const TextPercentage = styled(TextRN)`
+export const TextPercentage = styled(Text)`
   color: ${props => (props.positive ? theme.colors.green : theme.colors.red)};
 `;
 
-export const Line = styled(TextRN)`
+export const Line = styled(Text)`
   background-color: ${theme.colors.lineGrey};
   height: 2px;
-  width: 85%;
+  width: 87%;
   margin-vertical: 10px;
   margin-horizontal: 24px;
 `;
 
-export const CryptoLogo = styled(ImageRN)`
+export const CryptoLogo = styled(Image)`
   width: 50px;
   height: 50px;
 `;
 
-export const Arrow = styled(ImageRN)`
+export const Arrow = styled(Image)`
   width: 13px;
   height: 13px;
 `;
