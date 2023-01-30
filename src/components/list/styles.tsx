@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import theme from '../../config/utils/theme';
-import { Text, View, Image } from 'react-native';
+import { Text, TextProps, View, Image } from 'react-native';
+import { StyleTypes } from '../interfaces';
 
 export const Container = styled(View)`
   flex: 1;
@@ -67,8 +68,17 @@ export const TextPercent = styled(Text)`
   font-size: 14px;
 `;
 
-export const TextPercentage = styled(Text)`
-  color: ${props => (props.positive ? theme.colors.green : theme.colors.red)};
+interface TextPercentage extends TextProps {
+  positive: Boolean;
+  children: any;
+}
+
+// export const TextPercentage = ({ positive }: TextPercentage) => styled(Text)`
+//   color: ${(positive ? theme.colors.green : theme.colors.red)};
+// `;
+
+export const TextPercentage = styled(Text)<StyleTypes>`
+  color: ${((props) => props.positive ? theme.colors.green : theme.colors.red)};
 `;
 
 export const Line = styled(Text)`

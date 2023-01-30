@@ -25,7 +25,7 @@ const List = ({item}: Props) => (
     <Container>
       <LeftContainer>
         <LogoContainer>
-          <CryptoLogo source={item.img} />
+          <CryptoLogo source={{uri: `https://messari.io/asset-images/${item.id}/128.png`}} />
         </LogoContainer>
         <TextContainer>
           <TextCoin>{item.name}</TextCoin>
@@ -34,11 +34,11 @@ const List = ({item}: Props) => (
       </LeftContainer>
       <RightContainer>
         <ChangeContainer>
-          <TextCoin>${item.price}</TextCoin>
+          <TextCoin>${item.metrics.market_data.price_usd.toFixed(2)}</TextCoin>
           <TextPercent>
-            <Arrow source={item.percent > 0 ? GreenArrow : RedArrow} />
-            <TextPercentage positive={item.percent > 0}>
-              {item.percent}%
+            <Arrow source={item.metrics.market_data.percent_change_usd_last_24_hours > 0 ? GreenArrow : RedArrow} />
+            <TextPercentage positive={item.metrics.market_data.percent_change_usd_last_24_hours > 0}>
+              {item.metrics.market_data.percent_change_usd_last_24_hours.toFixed(2)}%
             </TextPercentage>
           </TextPercent>
         </ChangeContainer>

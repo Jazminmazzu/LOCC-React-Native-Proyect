@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import {TouchableOpacity, FlatList, View} from 'react-native';
 import {Crypto} from '../interfaces/index';
-import List from './list';
+import List from '../list/index';
 import {
   Container,
   CustomText,
   TopBar,
   ProfilePhoto,
   TextTouchable,
-} from '../cryptoList/styles';
+} from './styles';
 import avatar from '../../assets/img/avatar.png';
-import CryptoType from '../../types/types';
 
 function CryptocurrenciesList() {
-        const [cryptos, setCryptos] = useState([]);
-console.log("hola")
+  const [cryptos, setCryptos] = useState([]);
 //  const cryptos: Crypto[] = [
 //    {
 //      id: '1',
@@ -43,33 +41,21 @@ console.log("hola")
 //  ];
 
   useEffect(() => {
-    const fetchData= async () => {
+    const fetchData = async () => {
       try {
         const resp = await fetch(
-          'https://data.messari.io/api/v1/assets',
+          'https://data.messari.io/api/v2/assets',
         );
         const ResJson = await resp.json();
-        return ResJson.data;
+        setCryptos(ResJson.data);
       } catch (err) {
         console.log(err);
       }
     };
-    fetchData().then((data)=>{
-      console.log(data[0].metrics.market_data)
-      setCryptos(data)
-    })
+    fetchData();
   }, []);
 
-  function renderItem({ item }: { item: CryptoType; }) {
-    return <List item={item} />;
-  }
-  //function renderItem (item: CryptoType) {
-  //  return (
-  //    <>
-  //    {item && <List item={item} />} 
-  //    </>
-  //  )
-  //}
+  const renderItem = ({ item }:  { item: Crypto; }) => <List item={item} />;
 
   return (
     <>
