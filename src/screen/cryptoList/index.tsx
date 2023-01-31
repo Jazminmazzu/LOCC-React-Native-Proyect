@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {TouchableOpacity, FlatList, View} from 'react-native';
-import {Crypto} from '../interfaces/index';
-import List from '../list/index';
+import {Crypto} from '../../components/interfaces/index';
+import List from '../../components/list/index';
 import {
   Container,
   CustomText,
@@ -13,32 +13,6 @@ import avatar from '../../assets/img/avatar.png';
 
 function CryptocurrenciesList() {
   const [cryptos, setCryptos] = useState([]);
-//  const cryptos: Crypto[] = [
-//    {
-//      id: '1',
-//      name: 'Bitcoin',
-//      symbol: 'BTC',
-//      price: 7215.68,
-//      percent: 1.82,
-//      img: require('../../assets/img/bitcoin.png'),
-//    },
-//    {
-//      id: '2',
-//      name: 'Ethereum',
-//      symbol: 'ETH',
-//      price: 146.83,
-//      percent: 1.46,
-//      img: require('../../assets/img/ethereum.png'),
-//    },
-//    {
-//      id: '3',
-//      name: 'XRP',
-//     symbol: 'XRP',
-//      price: 0.220568,
-//      percent: -2.47,
-//      img: require('../../assets/img/xrp.png'),
-//    },
-//  ];
 
   useEffect(() => {
     const fetchData = async () => {

@@ -73,10 +73,6 @@ interface TextPercentage extends TextProps {
   children: any;
 }
 
-// export const TextPercentage = ({ positive }: TextPercentage) => styled(Text)`
-//   color: ${(positive ? theme.colors.green : theme.colors.red)};
-// `;
-
 export const TextPercentage = styled(Text)<StyleTypes>`
   color: ${((props) => props.positive ? theme.colors.green : theme.colors.red)};
 `;
