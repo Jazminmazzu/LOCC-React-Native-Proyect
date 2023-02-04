@@ -2,7 +2,7 @@ import React, {ReactElement} from 'react';
 import {Text} from 'react-native';
 import TinyImage from '../TinyImage';
 import theme from '../../theme';
-import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
+import MaterialIcon from 'react-native-vector-icons/TinyImage';
 import {CoinData} from '../../types';
 import {
   CryptoContainer,
