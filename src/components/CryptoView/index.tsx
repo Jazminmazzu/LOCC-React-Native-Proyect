@@ -40,17 +40,12 @@ const Cryptoview = ({coin}: {coin: CoinData}): ReactElement => (
         )}
 
         <ChangePercentage
-          inputColor={
-            coin.metrics.market_data.percent_change_usd_last_24_hours > 0
-              ? theme.colors.green
-              : theme.colors.red
-          }>
-          {Math.abs(
-            coin.metrics.market_data.percent_change_usd_last_24_hours.toFixed(
-              2,
-            ),
-          )}
-          %
+inputColor={
+  coin.market_data.percent_change_usd_last_24_hours > 0
+    ? theme.colors.green
+    : theme.colors.red
+}>
+{coin.market_data.percent_change_usd_last_24_hours.toFixed(2)}%
         </ChangePercentage>
       </Change>
     </StatsView>
