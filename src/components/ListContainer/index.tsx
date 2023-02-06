@@ -4,11 +4,11 @@ import Button from '../Button';
 import Cryptoview from '../CryptoView';
 import Header from '../Header';
 
-const ListContainer = (): ReactElement => {
+const ListContainer = (): ReactElement =>{
   const [Cryptos, setCryptos] = useState([]);
 
-  useEffect(() => {
-    async () => {
+  useEffect(() =>{
+    async () =>{
       try {
         const resp = await fetch(
           'https://data.messari.io/api/v2/assets?fields=id,name,slug,symbol,metrics/market_data',
