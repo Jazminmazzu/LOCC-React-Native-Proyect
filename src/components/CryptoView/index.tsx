@@ -21,15 +21,15 @@ const Cryptoview = ({coin}: {coin: CoinData}): ReactElement => (
         imgUrl={`https://messari.io/asset-images/${coin.id}/128.png`}
       />
       <CryptoName>
-        <Bold> {coin.name} </Bold>
-        <Text> {coin.symbol} </Text>
+        <Bold>{coin.name}</Bold>
+        <Text>{coin.symbol}</Text>
       </CryptoName>
     </NameView>
     <StatsView>
-      <Bold> ${coin.metrics.market_data.price_usd.toFixed(2)} </Bold>
+      <Bold>${coin.metrics.market_data.price_usd.toFixed(2)}</Bold>
 
       <Change>
-        {coin.metrics.market_data.percent_change_usd_last_24_hours > 0 ? (
+        {coin.metrics.market_data.percent_change_usd_last_24_hours> 0 ? (
           <MaterialIcon name="call-made" size={18} color={theme.colors.green} />
         ) : (
           <MaterialIcon
@@ -41,7 +41,7 @@ const Cryptoview = ({coin}: {coin: CoinData}): ReactElement => (
 
         <ChangePercentage
 inputColor={
-  coin.market_data.percent_change_usd_last_24_hours > 0
+  coin.market_data.percent_change_usd_last_24_hours> 0
     ? theme.colors.green
     : theme.colors.red
 }>

@@ -3,9 +3,9 @@ import {Props} from '../../types';
 
 import {Title, Touchable} from './styles';
 
-const Button: FC<Props> = ({text}): ReactElement => (
+const Button: FC<Props> = ({text}): ReactElement =>(
   <Touchable>
-    <Title> {text} </Title>
+    <Title>{text}</Title>
   </Touchable>
 );
 
