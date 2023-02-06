@@ -28,7 +28,7 @@ const ListContainer = (): ReactElement =>{
       <FlatList
         ListHeaderComponent={<Header />}
         data={Cryptos}
-        keyExtractor={item => item.id}
+        keyExtractor={ {id} => id } 
         renderItem={renderItem}
         ListFooterComponent={<Button text="+ Add a cryptocurrency" />}
       />
