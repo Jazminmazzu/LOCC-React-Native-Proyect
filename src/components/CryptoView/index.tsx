@@ -1,9 +1,9 @@
-import React, {ReactElement} from 'react';
-import {Text} from 'react-native';
-import TinyImage from '../TinyImage';
-import theme from '../../theme';
-import MaterialIcon from 'react-native-vector-icons/MaterialIcon';
-import {CoinData} from '../../types';
+import React, { ReactElement } from "react";
+import { Text } from "react-native";
+import TinyImage from "../TinyImage";
+import theme from "../../theme";
+import MaterialIcon from "react-native-vector-icons/MaterialIcon";
+import { CoinData } from "../../types";
 import {
   CryptoContainer,
   NameView,
@@ -12,9 +12,9 @@ import {
   StatsView,
   Change,
   ChangePercentage,
-} from './styles';
+} from "./styles";
 
-const Cryptoview = ({coin}: {coin: CoinData}): ReactElement => (
+const Cryptoview = ({ coin }: { coin: CoinData }): ReactElement => (
   <CryptoContainer>
     <NameView>
       <TinyImage
@@ -29,7 +29,7 @@ const Cryptoview = ({coin}: {coin: CoinData}): ReactElement => (
       <Bold>${coin.metrics.market_data.price_usd.toFixed(2)}</Bold>
 
       <Change>
-        {coin.metrics.market_data.percent_change_usd_last_24_hours> 0 ? (
+        {coin.metrics.market_data.percent_change_usd_last_24_hours > 0 ? (
           <MaterialIcon name="call-made" size={18} color={theme.colors.green} />
         ) : (
           <MaterialIcon
@@ -40,12 +40,13 @@ const Cryptoview = ({coin}: {coin: CoinData}): ReactElement => (
         )}
 
         <ChangePercentage
-inputColor={
-  coin.market_data.percent_change_usd_last_24_hours> 0
-    ? theme.colors.green
-    : theme.colors.red
-}>
-{coin.market_data.percent_change_usd_last_24_hours.toFixed(2)}%
+          inputColor={
+            coin.market_data.percent_change_usd_last_24_hours > 0
+              ? theme.colors.green
+              : theme.colors.red
+          }
+        >
+          {coin.market_data.percent_change_usd_last_24_hours.toFixed(2)}%
         </ChangePercentage>
       </Change>
     </StatsView>

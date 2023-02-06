@@ -1,5 +1,5 @@
-import styled from 'styled-components/native';
-import theme from '../../theme';
+import styled from "styled-components/native";
+import theme from "../../theme";
 
 export const CryptoContainer = styled.View`
   justify-content: space-between;
@@ -37,5 +37,5 @@ export const Change = styled.View`
 
 export const ChangePercentage = styled.Text`
   flex-direction: row;
-  color: ${props => props.inputColor};
+  color: ${(props) => props.inputColor};
 `;
