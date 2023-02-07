@@ -11,7 +11,7 @@ import {Container} from './styles';
 const Home = ({navigation}): JSX.Element => {
   const cryptos = useAppSelector(
     (state: IRootState) => state.addedCryptos.addedCryptos,
-  ) as [CoinData];
+  ) as CoinData[];
   const dispatch = useAppDispatch();
   const renderItem = ({item}: {item: CoinData}) => <Cryptoview coin={item} />;
   const onClick = () => {
