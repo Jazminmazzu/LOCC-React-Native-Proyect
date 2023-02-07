@@ -41,7 +41,6 @@ export const updateCurrencies: Function = () => {
   return async dispatch => {
     const resp = await fetch('${API_URL}/?fields=id,metrics/market_data');
     const resJson = await resp.json();
-    resJson;
     dispatch({ type: UPDATE_CURRENCIES, payload: resJson.data });
   };
 };
