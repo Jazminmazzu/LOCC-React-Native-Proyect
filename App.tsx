@@ -1,8 +1,8 @@
 import React from 'react';
-import CryptoList from './src/components/cryptoList';
+import CryptoList from './src/screen/cryptoList';
 import {SafeAreaView} from 'react-native';
 
-const App = () => (
+const App = () =>(
   <SafeAreaView>
     <CryptoList />
   </SafeAreaView>
