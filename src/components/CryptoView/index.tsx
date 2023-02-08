@@ -19,10 +19,10 @@ import {useAppDispatch, useAppSelector} from '../../hooks/hooks';
 import callMade from '../../assets/call_made_green_24dp.png';
 import callRecieved from '../../assets/call_received_red_24dp.png';
 
-const Cryptoview = (props): JSX.Element => {
-  const coin: CoinData = props.coin;
+const Cryptoview = ({coin}: {coin: CoinData}): JSX.Element => {
   const dispatch = useAppDispatch();
   const Cryptos: CoinData = useAppSelector(
+    ({addedCryptos}) => addedCryptos.addedCryptos,
     (state: IRootState) => state.addedCryptos.addedCryptos,
   );
   const deleteCoin = () => {

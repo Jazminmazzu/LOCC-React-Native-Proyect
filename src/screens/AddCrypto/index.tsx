@@ -8,7 +8,7 @@ import {useAppDispatch, useAppSelector} from '../../hooks/hooks';
 
 export const AddCurrency = ({navigation}): JSX.Element => {
   const dispatch = useAppDispatch();
-  const {addedCryptos} = useAppSelector(state => state.addedCryptos);
+  const {addedCryptos} = useAppSelector({addedCryptos}=> addedCryptos);
   const [search, setSearch] = useState(null);
   const [focus, setFocus] = useState(false);
   const onNavigation = () => {

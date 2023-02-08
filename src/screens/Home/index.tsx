@@ -35,7 +35,7 @@ const Home = ({navigation}): JSX.Element => {
     <SafeAreaView>
       <Container
         data={cryptos}
-        keyExtractor={item => item.Asset.id}
+        keyExtractor={Asset} : {Asset : Asset}=> Asset.id}
         renderItem={renderItem}
         ListFooterComponent={
           <Button
