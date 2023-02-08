@@ -38,10 +38,10 @@ export const Change = styled.View`
 export const Arrow = styled.Image`
   width: 16px;
   height: 16px;
-  margin - top: 2px;
+  margin-top: 2px;
   `;
 
 export const ChangePercentage = styled.Text`
   flex-direction: row;
-  color: ${{ inputColor } : { inputColor: string }=> inputColor};
+  color: ${{inputColor} : {inputColor: string}=> inputColor};
 `;

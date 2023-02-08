@@ -10,22 +10,22 @@ import {Container} from './styles';
 
 const Home = ({navigation}): JSX.Element => {
   const cryptos = useAppSelector(
-    (state: IRootState) => state.addedCryptos.addedCryptos,
+    (state: IRootState)=> state.addedCryptos.addedCryptos,
   ) as CoinData[];
   const dispatch = useAppDispatch();
-  const renderItem = ({item}: {item: CoinData}) => <Cryptoview coin={item} />;
-  const onClick = () => {
+  const renderItem = ({item}: {item: CoinData})=> <Cryptoview coin={item} />;
+  const onClick = ()=> {
     navigation.navigate('ADD_CRYPTO');
   };
-  const update = () => {
+  const update = ()=> {
     if (cryptos.length > 0) {
       dispatch(updateCurrencies());
     }
   };
 
-  useEffect(() => {
+  useEffect(()=> {
     const intervalId = setInterval(() => update(), 2000);
-    return () => {
+    return ()=> {
       clearInterval(intervalId);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps

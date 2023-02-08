@@ -22,8 +22,8 @@ import callRecieved from '../../assets/call_received_red_24dp.png';
 const Cryptoview = ({coin}: {coin: CoinData}): JSX.Element => {
   const dispatch = useAppDispatch();
   const Cryptos: CoinData = useAppSelector(
-    ({addedCryptos}) => addedCryptos.addedCryptos,
-    (state: IRootState) => state.addedCryptos.addedCryptos,
+    ({addedCryptos})=> addedCryptos.addedCryptos,
+    (state: IRootState)=> state.addedCryptos.addedCryptos,
   );
   const deleteCoin = () => {
     Alert.alert(
@@ -35,7 +35,7 @@ const Cryptoview = ({coin}: {coin: CoinData}): JSX.Element => {
         },
         {
           text: 'OK',
-          onPress: () => dispatch(deleteCrypto(coin.Asset.id, Cryptos)),
+          onPress: ()=> dispatch(deleteCrypto(coin.Asset.id, Cryptos)),
         },
       ],
     );

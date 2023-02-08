@@ -22,6 +22,6 @@ export const YellowTouchable = styled.TouchableOpacity`
 
 export const RegularTitle = styled.Text`
   font-size: 17px;
-  color: ${{ color } : { color: string }=> color};
-font - weight: bold;
+  color: ${{color} : {color: string}=> color};
+  font-weight: bold;
 `;
