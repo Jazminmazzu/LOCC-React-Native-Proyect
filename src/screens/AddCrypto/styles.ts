@@ -4,7 +4,7 @@ import theme from '../../theme';
 
 export const Input = styled.TextInput`
   font-size: 17px;
-  border-color: ${{borderColor} : {borderColor: string}=> borderColor};
+  border-color: ${({borderColor} : {borderColor: string})=> borderColor};
   border-width: 2px;
   padding: 14px;
   margin-horizontal: 7.5 %;
